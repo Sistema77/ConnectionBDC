@@ -23,6 +23,7 @@ namespace ConnectionDBC.Servicios
                 {
                     conn = new NpgsqlConnection(stringConexionPostgresql);
                     conn.Open();
+
                     estado = conn.State.ToString();
 
                     if (estado.Equals("Open"))

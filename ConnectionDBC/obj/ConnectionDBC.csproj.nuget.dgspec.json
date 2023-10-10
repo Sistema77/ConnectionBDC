@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Puesto20\\Desktop\\C\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj": {}
+    "C:\\Users\\josem\\OneDrive\\Escritorio\\Proyect\\DWS\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Puesto20\\Desktop\\C\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj": {
+    "C:\\Users\\josem\\OneDrive\\Escritorio\\Proyect\\DWS\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Puesto20\\Desktop\\C\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj",
+        "projectUniqueName": "C:\\Users\\josem\\OneDrive\\Escritorio\\Proyect\\DWS\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj",
         "projectName": "ConnectionDBC",
-        "projectPath": "C:\\Users\\Puesto20\\Desktop\\C\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj",
-        "packagesPath": "C:\\Users\\Puesto20\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Puesto20\\Desktop\\C\\ConnectionBDC\\ConnectionDBC\\obj\\",
+        "projectPath": "C:\\Users\\josem\\OneDrive\\Escritorio\\Proyect\\DWS\\ConnectionBDC\\ConnectionDBC\\ConnectionDBC.csproj",
+        "packagesPath": "C:\\Users\\josem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josem\\OneDrive\\Escritorio\\Proyect\\DWS\\ConnectionBDC\\ConnectionDBC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Puesto20\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

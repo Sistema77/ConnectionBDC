@@ -56,3 +56,11 @@ C:\Users\Puesto20\Desktop\C\ConnectionBDC\ConnectionDBC\bin\Debug\net6.0\runtime
 C:\Users\Puesto20\Desktop\C\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.csproj.CopyComplete
 C:\Users\Puesto20\Desktop\C\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.genruntimeconfig.cache
 C:\Users\Puesto20\Desktop\C\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ref\ConnectionDBC.dll
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.dll
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\refint\ConnectionDBC.dll
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.pdb
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.csproj.AssemblyReference.cache
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.AssemblyInfoInputs.cache
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.AssemblyInfo.cs
+C:\Users\josem\OneDrive\Escritorio\Proyect\DWS\ConnectionBDC\ConnectionDBC\obj\Debug\net6.0\ConnectionDBC.csproj.CoreCompileInputs.cache

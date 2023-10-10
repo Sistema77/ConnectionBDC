@@ -12,7 +12,12 @@ public class program
         Query consultas = new Query();
         byte opcion = 0;
         long idLibro;
+        string titulo;
+        string autor;
+        string isbn;
+        int edicion;
         string entrada;
+
         // Algorithm
 
         conn = con.generarConexion();
@@ -35,6 +40,7 @@ public class program
             if (byte.TryParse(Console.ReadLine(), out opcion))
             {
                 Console.WriteLine("--------------");
+
                 switch (opcion)
                 {
                     case 1:
@@ -43,16 +49,39 @@ public class program
                     case 2:
                         do
                         {
-                            Console.Write("Ponga el Id del Libro que Quiera eliminar: ");
-                        } while (!long.TryParse(Console.ReadLine(), out idLibro));
+                            Console.WriteLine("---Insertar Libro---");
 
-                        consultas.deleteLibro(idLibro, conn);
+                            try
+                            {
+                                Console.Write("Titulo: ");
+                                titulo = Console.ReadLine();
+                                Console.WriteLine();
+
+                                Console.Write("Autor: ");
+                                autor = Console.ReadLine();
+                                Console.WriteLine();
+
+                                Console.Write("ISBN: ");
+                                isbn = Console.ReadLine();
+                                Console.WriteLine();
+
+                                Console.Write("Edicion: ");
+                                edicion = int.Parse(Console.ReadLine()); 
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Error: " + ex.Message);
+                            }
+
+                        } while (string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(isbn) || !int.TryParse(edicion, out _));
+
+                        consultas.insertLibro(titulo, autor, isbn, edicion, conn);
 
                         break;
                     case 3:
                         
-                        Console.WriteLine("Ponga el id del Libro que desea Eliminar");
-                        
+                        Console.Write("Ponga el id del Libro que desea Eliminar: ");
+  
                         entrada = Console.ReadLine();
 
                         if (long.TryParse(entrada, out idLibro))
@@ -66,18 +95,40 @@ public class program
                         
                     break;
                     case 4:
-                        Console.WriteLine("Ponga el id del Libro que desea Actualizar");
-
-                        entrada = Console.ReadLine();
-
-                        if (long.TryParse(entrada, out idLibro))
+                        do
                         {
-                            consultas.deleteLibro(idLibro, conn);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"'{entrada}' no es un número válido.");
-                        }
+                            Console.WriteLine("---Update Libro---");
+
+                            try
+                            {
+                                Console.Write("Titulo: ");
+                                idLibro = long.Parse(Console.ReadLine());
+                                Console.WriteLine();
+
+                                Console.Write("Titulo: ");
+                                titulo = Console.ReadLine();
+                                Console.WriteLine();
+
+                                Console.Write("Autor: ");
+                                autor = Console.ReadLine();
+                                Console.WriteLine();
+
+                                Console.Write("ISBN: ");
+                                isbn = Console.ReadLine();
+                                Console.WriteLine();
+
+                                Console.Write("Edicion: ");
+                                edicion = int.Parse(Console.ReadLine());
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Error: " + ex.Message);
+                            }
+
+                        } while ( !long.Parse(idLibro) || string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(isbn) || !int.Parse(edicion);
+
+                        consultas.updateLibro(idLibro, titulo, autor, isbn, edicion, conn);
+
                         break;
                     case 5:
                         Console.WriteLine("Adiós!");

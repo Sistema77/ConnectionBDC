@@ -12,9 +12,26 @@ namespace ConnectionDBC.Servicios
 {
     internal class Query
     {
-        public void insertLibro(long idLibro, string titulo, string autor, string isbn, int edicion)
+        public void insertLibro(string titulo, string autor, string isbn, int edicion, NpgsqlConnection conn)
         {
+            string query = "INSERT INTO public.gbp_alm_cat_libros( titulo, autor, isbn, edicion ) VALUES ( @titulo, @autor, @isbn, @edicion );";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("titulo", titulo);
+                cmd.Parameters.AddWithValue("autor", autor);
+                cmd.Parameters.AddWithValue("isbn", isbn);
+                cmd.Parameters.AddWithValue("edicion", edicion);
 
+                cmd.ExecuteReader();
+
+                Console.WriteLine("[INFO: Dato Borrado con exito]");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[Error: Query-insertLibro]" + ex.Message);
+            }
         }
         public void selectLibro(NpgsqlConnection conn)
         {

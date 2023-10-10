@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ConnectionDBC",
+    "\\ConnectionDBC\\Controladores",
+    "\\ConnectionDBC\\Dtos",
+    "\\ConnectionDBC\\Servicios"
+  ],
+  "SelectedNode": "\\ConnectionDBC\\Controladores\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}

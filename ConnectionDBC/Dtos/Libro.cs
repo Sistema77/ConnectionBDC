@@ -8,6 +8,8 @@ namespace ConnectionDBC.Dtos
 {
     internal class Libro
     {
+        //**Clase que nos usaremos para pasar a DTO*/
+
         //Atributos:
         private long idLibro;
         private string titulo;

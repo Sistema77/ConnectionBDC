@@ -44,9 +44,11 @@ public class program
                 switch (opcion)
                 {
                     case 1:
+                                    // SELECT
                         consultas.selectLibro(conn);
                     break;
                     case 2:
+                                    // INSERT
                         do
                         {
                             Console.WriteLine("---Insertar Libro---");
@@ -80,7 +82,7 @@ public class program
 
                         break;
                     case 3:
-                        
+                                        // DELETER
                         Console.Write("Ponga el id del Libro que desea Eliminar: ");
   
                         entrada = Console.ReadLine();
@@ -96,13 +98,14 @@ public class program
                         
                     break;
                     case 4:
+                                // UPDATE
                         do
                         {
                             Console.WriteLine("---Update Libro---");
 
                             try
                             {
-                                Console.Write("Titulo: ");
+                                Console.Write("Id Libro: ");
                                 idLibro = long.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
@@ -134,6 +137,7 @@ public class program
 
                         break;
                     case 5:
+                                // EXIT
                         Console.WriteLine("Adiós!");
                     break;
                     default:

@@ -10,10 +10,12 @@ using System.Data;
 
 namespace ConnectionDBC.Servicios
 {
-    internal class Query
+    internal class Query : QueryInterface
     {
+        //** Clase que realiza el CRUD */
         public void insertLibro(string titulo, string autor, string isbn, int edicion, NpgsqlConnection conn)
         {
+            /** Insertar un nuevo libro en la base de Datos */
             string query = "INSERT INTO public.gbp_alm_cat_libros( titulo, autor, isbn, edicion ) VALUES ( @titulo, @autor, @isbn, @edicion );";
             try
             {
@@ -35,6 +37,7 @@ namespace ConnectionDBC.Servicios
         }
         public void selectLibro(NpgsqlConnection conn)
         {
+            /**Muestra todos los Libros que hay en la base de datos */
             string query = "SELECT * FROM public.gbp_alm_cat_libros";
             try { 
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
@@ -63,15 +66,35 @@ namespace ConnectionDBC.Servicios
 
         public void updateLibro(long idLibro, string titulo, string autor, string isbn, int edicion, NpgsqlConnection conn)
         {
+            /** Actualiza un Libro ya existente */
+            string query = "UPDATE public.gbp_alm_cat_libros SET titulo= @titulo, autor= @autor, isbn= @isbn, edicion= @edicion WHERE id_libro = @idLibro;";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("idLibro", idLibro);
+                cmd.Parameters.AddWithValue("titulo", titulo);
+                cmd.Parameters.AddWithValue("autor", autor);
+                cmd.Parameters.AddWithValue("isbn", isbn);
+                cmd.Parameters.AddWithValue("edicion", edicion);
 
+                cmd.ExecuteReader();
+
+                Console.WriteLine("[INFO: Libro UpDate con exito]");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[Error: Query-insertLibro]" + ex.Message);
+            }
         }
         public void deleteLibro(long idLibro, NpgsqlConnection conn)
         {
+            /** Elimina un libro */
             string query = "DELETE FROM public.gbp_alm_cat_libros WHERE id_libro = @idLibro;";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("id", idLibro);
+                cmd.Parameters.AddWithValue("idLibro", idLibro);
 
                 cmd.ExecuteReader();
 

@@ -8,10 +8,12 @@ using Npgsql;
 
 namespace ConnectionDBC.Servicios
 {
-    internal class connection
+    internal class connection : ConnectionInterface
     {
+        /** Clase para abrir y cerrar la conexion con la base de datos */
         public NpgsqlConnection generarConexion()
         {
+            /** Genera una conexion con la base de datos */
             string stringConexionPostgresql = ConfigurationManager.ConnectionStrings["stringConexion"].ConnectionString;
             Console.WriteLine("[INFORMACIÓN-ConexionPostgresqlImplementacion-generarConexionPostgresql] Cadena conexión: " + stringConexionPostgresql);
             NpgsqlConnection conn = null;
@@ -47,6 +49,7 @@ namespace ConnectionDBC.Servicios
 
         public void cerrarConexion(NpgsqlConnection conn)
         {
+            /** Cierra la conexion con la base de datos*/
             try
             {
                 conn.Close();

@@ -25,10 +25,10 @@ namespace ConnectionDBC.Servicios
                 cmd.Parameters.AddWithValue("isbn", isbn);
                 cmd.Parameters.AddWithValue("edicion", edicion);
 
-                cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
 
                 Console.WriteLine("[INFO: Libro Insertado con exito]");
-
+                cmd.Cancel();
             }
             catch (Exception ex)
             {
@@ -38,8 +38,9 @@ namespace ConnectionDBC.Servicios
         public void selectLibro(NpgsqlConnection conn)
         {
             /**Muestra todos los Libros que hay en la base de datos */
-            string query = "SELECT * FROM public.gbp_alm_cat_libros";
-            try { 
+            try {
+                string query = "SELECT * FROM public.gbp_alm_cat_libros";
+
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
 
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
@@ -58,7 +59,9 @@ namespace ConnectionDBC.Servicios
                         Console.WriteLine();
                     }
                 }
-            }catch (Exception ex)
+                cmd.Cancel();
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("[Error: Query-selectLibro]" + ex.Message);
             }
@@ -67,9 +70,11 @@ namespace ConnectionDBC.Servicios
         public void updateLibro(long idLibro, string titulo, string autor, string isbn, int edicion, NpgsqlConnection conn)
         {
             /** Actualiza un Libro ya existente */
-            string query = "UPDATE public.gbp_alm_cat_libros SET titulo= @titulo, autor= @autor, isbn= @isbn, edicion= @edicion WHERE id_libro = @idLibro;";
+            
             try
             {
+                string query = "UPDATE public.gbp_alm_cat_libros SET titulo= @titulo, autor= @autor, isbn= @isbn, edicion= @edicion WHERE id_libro = @idLibro;";
+
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("idLibro", idLibro);
                 cmd.Parameters.AddWithValue("titulo", titulo);
@@ -77,10 +82,10 @@ namespace ConnectionDBC.Servicios
                 cmd.Parameters.AddWithValue("isbn", isbn);
                 cmd.Parameters.AddWithValue("edicion", edicion);
 
-                cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
 
                 Console.WriteLine("[INFO: Libro UpDate con exito]");
-
+                cmd.Cancel();
             }
             catch (Exception ex)
             {
@@ -94,12 +99,14 @@ namespace ConnectionDBC.Servicios
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+
                 cmd.Parameters.AddWithValue("idLibro", idLibro);
 
-                cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
 
                 Console.WriteLine("[INFO: Dato Borrado con exito]");
 
+                cmd.Cancel();
             }
             catch (Exception ex)
             {

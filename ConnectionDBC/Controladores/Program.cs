@@ -11,12 +11,12 @@ public class program
         connection con = new connection();
         Query consultas = new Query();
         byte opcion = 0;
-        long idLibro;
-        string titulo;
-        string autor;
-        string isbn;
-        int edicion;
-        string entrada;
+        long idLibro = 0;
+        string titulo = null;
+        string autor = null;
+        string isbn = null;
+        int edicion = 0;
+        string entrada = null;
 
         // Algorithm
 
@@ -73,7 +73,8 @@ public class program
                                 Console.WriteLine("Error: " + ex.Message);
                             }
 
-                        } while (string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(isbn) || !int.TryParse(edicion, out _));
+                        } while (string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(isbn) || 
+                        string.IsNullOrEmpty(edicion.ToString()) || edicion == 0);
 
                         consultas.insertLibro(titulo, autor, isbn, edicion, conn);
 
@@ -125,7 +126,9 @@ public class program
                                 Console.WriteLine("Error: " + ex.Message);
                             }
 
-                        } while ( !long.Parse(idLibro) || string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(isbn) || !int.Parse(edicion);
+                        } while ( string.IsNullOrEmpty(idLibro.ToString()) || idLibro == 0 || string.IsNullOrEmpty(titulo) || 
+                        string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(isbn) || string.IsNullOrEmpty(edicion.ToString()) || 
+                        edicion == 0);
 
                         consultas.updateLibro(idLibro, titulo, autor, isbn, edicion, conn);
 

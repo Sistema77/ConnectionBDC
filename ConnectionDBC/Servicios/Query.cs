@@ -25,7 +25,7 @@ namespace ConnectionDBC.Servicios
 
                 cmd.ExecuteReader();
 
-                Console.WriteLine("[INFO: Dato Borrado con exito]");
+                Console.WriteLine("[INFO: Libro Insertado con exito]");
 
             }
             catch (Exception ex)
